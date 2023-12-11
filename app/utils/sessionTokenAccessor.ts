@@ -15,8 +15,6 @@ export async function getIdToken() {
   const session = (await getServerSession(authOptions)) as any;
   if (session) {
     const idToken = decrypt(session.idToken);
-    console.log("idToken: ");
-    console.log(idToken);
     return idToken;
   }
   return null;
